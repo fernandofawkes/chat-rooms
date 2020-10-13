@@ -1,14 +1,21 @@
 import React, { useRef } from 'react';
 
-const SignIn = () => {
+const SignIn = ({connect}) => {
 
   const nome = useRef(null);
   const sala = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(nome.current.value, sala.current.value);
+    if(!nome.current.value) {
+      nome.current.focus();
+      return;
+    }
+    if(!sala.current.value) {
+      sala.current.focus();
+      return;
+    }
+    connect({userName: nome.current.value, room: sala.current.value});
   }
 
 

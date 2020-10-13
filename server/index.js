@@ -23,6 +23,12 @@ io.on('connection', (socket) => {
     socket.join(data);
     console.log('User joined room ' + data);
   });
+ 
+  socket.on('message', (data) => {
+    const {room, ...content} = data;
+    console.log(data);
+    socket.to(room).emit("log", content);
+  });
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
