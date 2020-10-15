@@ -21,10 +21,12 @@ const SignIn = ({connect}) => {
 
 
   return (
-  <form className="logIn" onSubmit={handleSubmit}>
-    <input ref={nome} type="text" placeholder="Insira um nome..."></input>
-    <input ref={sala} type="text" placeholder="Insira uma sala..."></input>
-    <button type="submit">Entrar</button>
+  <form className="chat-form" onSubmit={handleSubmit}>
+      <div className="form-inner">
+      <input ref={nome} type="text" placeholder="Insira um nome..."></input>
+      <input ref={sala} type="text" placeholder="Insira uma sala..."></input>
+      <button type="submit">Entrar</button>
+    </div>
   </form>
   )
 }

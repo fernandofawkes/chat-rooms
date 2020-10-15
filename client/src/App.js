@@ -43,7 +43,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Chat App</h1>
+      <header>
+        <h1>Chat App</h1>
+      </header>
       {
         !loggedIn ? (<SignIn connect={connectToRoom} />) : (<ChatRoom room={room} log={log} sendMessage={sendMessage} />)
       }
